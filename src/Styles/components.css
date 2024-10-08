@@ -1,0 +1,74 @@
+/* Riddle box styling */
+.riddle-box {
+  border: 2px solid #000; /* Add a solid border around the riddle */
+  padding: 20px; /* Add padding inside the box */
+  background-color: #f9f9f9; /* Light background color for contrast */
+  border-radius: 8px; /* Smooth edges */
+  margin: 20px auto; /* Center the riddle box */
+  width: 80%; /* Set a maximum width */
+  max-width: 500px; /* Limit the width on larger screens */
+  white-space: pre-line; /* Preserve line breaks */
+}
+
+/* WordDisplay component */
+.word-display .letter {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+/* Input component */
+input {
+  width: 100px; /* Make the input smaller */
+  font-size: 20px;
+  text-align: center; /* Center the input text */
+  margin: 0 auto; /* Center the input in the form */
+  display: inline-block;
+}
+
+button {
+  margin-left: 10px; /* Add space between the input and button */
+  text-align: left;
+}
+
+/* HangmanDrawing component */
+.hangman-images {
+  margin: 20px 0;
+}
+
+/* GameEnd component */
+.game-end h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.game-end button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.riddle {
+  font-style: italic;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+/* Center the input container */
+.input-container {
+  margin-top: 20px;
+}
+
+/* Center content in form */
+form {
+  display: flex;
+  justify-content: center; /* Center the input and button */
+}
+
+button {
+  text-align: left;
+  margin-top: 0;
+}
