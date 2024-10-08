@@ -104,7 +104,7 @@ src/
 ---
 
 ## Credits
-Created by [Your Name or Team Name]. If you have any questions or issues with the project, feel free to reach out!
+Created by Leon Pretorius. If you have any questions or issues with the project, feel free to reach out!
 
 ---
 
