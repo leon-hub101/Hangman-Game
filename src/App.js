@@ -36,30 +36,36 @@ function App() {
 
   // Function to handle the user's guess input
   const handleGuess = (letter) => {
-    // Check if the letter has already been guessed (either correct or incorrect)
+    // Check if the letter has already been guessed
     if (correctGuesses.includes(letter) || wrongGuesses.includes(letter)) {
-      // Notify the player that they already guessed this letter
       alert(`You've already guessed "${letter}". Try another letter.`);
-      return; // Exit the function if the letter has already been guessed
+      return;
     }
-
-    // Proceed if the letter is not a repeated guess
+  
+    // Create a new variable to store the updated correct guesses
+    let newCorrectGuesses = correctGuesses;
+    
     if (word.includes(letter)) {
-      setCorrectGuesses([...correctGuesses, letter]);
+      newCorrectGuesses = [...correctGuesses, letter]; // Add the new letter to the correct guesses
+      setCorrectGuesses(newCorrectGuesses);
     } else {
       setWrongGuesses([...wrongGuesses, letter]);
     }
-
-    checkGameStatus(); // Check if the game is won or lost
+  
+    // Use the newCorrectGuesses variable to check if all letters are guessed
+    checkGameStatus(newCorrectGuesses);
   };
-
+  
   // Function to check if the player has won or lost the game
-  const checkGameStatus = () => {
-    const allGuessed = word
-      .split("")
-      .every((letter) => correctGuesses.includes(letter));
-    if (allGuessed) setGameStatus("won");
-    if (wrongGuesses.length >= 9) setGameStatus("lost"); // Set the number of guesses to 10
+  const checkGameStatus = (newCorrectGuesses) => {
+    const allGuessed = word.split("").every((letter) => newCorrectGuesses.includes(letter));
+    
+    if (allGuessed) {
+      setGameStatus("won");
+      // Set the number of guesses to 10
+    } else if (wrongGuesses.length >= 9) {
+      setGameStatus("lost");
+    }
   };
 
   // Function to restart the game by resetting the state
